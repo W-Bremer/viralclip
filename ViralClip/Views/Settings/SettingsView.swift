@@ -67,7 +67,7 @@ struct SettingsView: View {
                         }
                     }
                     .tint(.appPrimary)
-                    .onChange(of: viewModel.preferences.dailyReminderEnabled) { _, _ in
+                    .onChange(of: viewModel.preferences.dailyReminderEnabled) { _ in
                         viewModel.save()
                     }
                     
@@ -78,9 +78,6 @@ struct SettingsView: View {
                             displayedComponents: .hourAndMinute
                         )
                         .foregroundColor(.white)
-                        .onChange(of: viewModel.preferences.reminderTime) { _, _ in
-                            viewModel.save()
-                        }
                     }
                 } header: {
                     Text("Notifications")
