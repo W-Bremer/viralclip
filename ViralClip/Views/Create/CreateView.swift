@@ -6,7 +6,8 @@ struct CreateView: View {
     @EnvironmentObject var analysisService: AIAnalysisService
     @EnvironmentObject var videoService: VideoGenerationService
     
-    @StateObject private var viewModel: CreateViewModel? = nil
+    @State private var viewModel: CreateViewModel?
+    @State private var isInitialized = false
     
     var body: some View {
         NavigationStack {
@@ -34,62 +35,73 @@ struct CreateView: View {
             }
         }
         .onAppear {
-            if viewModel == nil {
+            if !isInitialized {
                 viewModel = CreateViewModel(
                     photoService: photoService,
                     analysisService: analysisService,
                     videoService: videoService
                 )
+                isInitialized = true
             }
         }
     }
     
+    @ViewBuilder
     private var mainContent: some View {
+        if let viewModel = viewModel {
+            MainContentView(viewModel: viewModel, photoService: photoService)
+        }
+    }
+    
+    @ViewBuilder
+    private var permissionRequestView: some View {
+        if let viewModel = viewModel {
+            PermissionRequestView(viewModel: viewModel)
+        } else {
+            ProgressView()
+        }
+    }
+}
+
+struct MainContentView: View {
+    @ObservedObject var viewModel: CreateViewModel
+    @ObservedObject var photoService: PhotoLibraryService
+    
+    var body: some View {
         ScrollView {
             VStack(spacing: 24) {
-                if viewModel?.selectedMedia.isEmpty == true {
+                if viewModel.selectedMedia.isEmpty {
                     selectMediaPrompt
                 } else {
                     selectedMediaSection
                     
-                    if viewModel?.isAnalyzing == true || viewModel?.isGenerating == true {
+                    if viewModel.isAnalyzing || viewModel.isGenerating {
                         progressSection
-                    } else if viewModel?.detectedTags.isEmpty == false {
+                    } else if !viewModel.detectedTags.isEmpty {
                         tagsSection
                     }
                     
-                    if viewModel?.detectedTags.isEmpty == true && viewModel?.isGenerating == false {
+                    if viewModel.detectedTags.isEmpty && !viewModel.isGenerating {
                         analyzeButton
-                    } else if viewModel?.isGenerating == false {
+                    } else if !viewModel.isGenerating {
                         generateButton
                     }
                 }
             }
             .padding(16)
         }
-        .sheet(isPresented: Binding(
-            get: { viewModel?.showingMediaPicker ?? false },
-            set: { viewModel?.showingMediaPicker = $0 }
-        )) {
+        .sheet(isPresented: $viewModel.showingMediaPicker) {
             MediaPickerView()
                 .environmentObject(photoService)
                 .onDisappear {
-                    if let vm = viewModel {
-                        Task {
-                            await photoService.loadMedia()
-                        }
+                    Task {
+                        await photoService.loadMedia()
                     }
                 }
         }
-        .fullScreenCover(isPresented: Binding(
-            get: { viewModel?.showVideoPreview ?? false },
-            set: { viewModel?.showVideoPreview = $0 }
-        )) {
-            if let video = viewModel?.generatedVideo, let url = video.videoURL {
-                VideoPlayerView(url: url, isPresented: Binding(
-                    get: { viewModel?.showVideoPreview ?? false },
-                    set: { viewModel?.showVideoPreview = $0 }
-                ))
+        .fullScreenCover(isPresented: $viewModel.showVideoPreview) {
+            if let video = viewModel.generatedVideo, let url = video.videoURL {
+                VideoPlayerView(url: url, isPresented: $viewModel.showVideoPreview)
             }
         }
     }
@@ -113,7 +125,7 @@ struct CreateView: View {
                 .multilineTextAlignment(.center)
             
             Button(action: {
-                viewModel?.showingMediaPicker = true
+                viewModel.showingMediaPicker = true
             }) {
                 HStack {
                     Image(systemName: "photo.on.rectangle")
@@ -137,12 +149,12 @@ struct CreateView: View {
                 
                 Spacer()
                 
-                Text("\(viewModel?.selectedMedia.count ?? 0) items")
+                Text("\(viewModel.selectedMedia.count) items")
                     .font(.subheadline)
                     .foregroundColor(.appTextSecondary)
                 
                 Button("Add More") {
-                    viewModel?.showingMediaPicker = true
+                    viewModel.showingMediaPicker = true
                 }
                 .font(.subheadline)
                 .foregroundColor(.appPrimary)
@@ -150,14 +162,14 @@ struct CreateView: View {
             
             ScrollView(.horizontal, showsIndicators: false) {
                 HStack(spacing: 8) {
-                    ForEach(viewModel?.selectedMedia ?? []) { item in
+                    ForEach(viewModel.selectedMedia) { item in
                         MediaThumbnailView(
                             item: item,
                             photoService: photoService,
-                            isSelected: viewModel?.isSelected(item) ?? false
+                            isSelected: viewModel.isSelected(item)
                         )
                         .onTapGesture {
-                            viewModel?.toggleMediaSelection(item)
+                            viewModel.toggleMediaSelection(item)
                         }
                     }
                 }
@@ -167,12 +179,12 @@ struct CreateView: View {
     
     private var progressSection: some View {
         VStack(spacing: 16) {
-            if viewModel?.isAnalyzing == true {
+            if viewModel.isAnalyzing {
                 HStack {
-                    ProgressView(value: viewModel?.analysisProgress ?? 0)
+                    ProgressView(value: viewModel.analysisProgress)
                         .tint(.appPrimary)
                     
-                    Text("\(Int((viewModel?.analysisProgress ?? 0) * 100))%")
+                    Text("\(Int(viewModel.analysisProgress * 100))%")
                         .font(.caption)
                         .foregroundColor(.appTextSecondary)
                 }
@@ -182,12 +194,12 @@ struct CreateView: View {
                     .foregroundColor(.appTextSecondary)
             }
             
-            if viewModel?.isGenerating == true {
+            if viewModel.isGenerating {
                 HStack {
-                    ProgressView(value: viewModel?.generationProgress ?? 0)
+                    ProgressView(value: viewModel.generationProgress)
                         .tint(.appSecondary)
                     
-                    Text("\(Int((viewModel?.generationProgress ?? 0) * 100))%")
+                    Text("\(Int(viewModel.generationProgress * 100))%")
                         .font(.caption)
                         .foregroundColor(.appTextSecondary)
                 }
@@ -209,19 +221,19 @@ struct CreateView: View {
                 .foregroundColor(.white)
             
             FlowLayout(spacing: 8) {
-                ForEach(viewModel?.detectedTags ?? []) { tag in
+                ForEach(viewModel.detectedTags) { tag in
                     AIFeatureTagView(tag: tag)
                 }
             }
             
-            if !(viewModel?.trendingTags.isEmpty ?? true) {
+            if !viewModel.trendingTags.isEmpty {
                 Text("Trending Formats")
                     .font(.headline)
                     .foregroundColor(.white)
                     .padding(.top, 8)
                 
                 FlowLayout(spacing: 8) {
-                    ForEach(viewModel?.trendingTags ?? []) { tag in
+                    ForEach(viewModel.trendingTags) { tag in
                         AIFeatureTagView(tag: tag, isTrending: true)
                     }
                 }
@@ -237,9 +249,9 @@ struct CreateView: View {
                     ForEach(GeneratedVideo.VideoStyle.allCases, id: \.self) { style in
                         StyleSelectorButton(
                             style: style,
-                            isSelected: viewModel?.selectedStyle == style
+                            isSelected: viewModel.selectedStyle == style
                         ) {
-                            viewModel?.selectedStyle = style
+                            viewModel.selectedStyle = style
                         }
                     }
                 }
@@ -250,7 +262,7 @@ struct CreateView: View {
     private var analyzeButton: some View {
         Button(action: {
             Task {
-                await viewModel?.analyzeSelectedMedia()
+                await viewModel.analyzeSelectedMedia()
             }
         }) {
             HStack {
@@ -264,7 +276,7 @@ struct CreateView: View {
     private var generateButton: some View {
         Button(action: {
             Task {
-                await viewModel?.generateVideo()
+                await viewModel.generateVideo()
             }
         }) {
             HStack {
@@ -274,8 +286,12 @@ struct CreateView: View {
             .primaryButton()
         }
     }
+}
+
+struct PermissionRequestView: View {
+    @ObservedObject var viewModel: CreateViewModel
     
-    private var permissionRequestView: some View {
+    var body: some View {
         VStack(spacing: 20) {
             Image(systemName: "photo.badge.exclamationmark")
                 .font(.system(size: 60))
@@ -294,7 +310,7 @@ struct CreateView: View {
             
             Button(action: {
                 Task {
-                    await viewModel?.requestPhotoAccess()
+                    await viewModel.requestPhotoAccess()
                 }
             }) {
                 Text("Grant Access")
