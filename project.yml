@@ -2,7 +2,7 @@ name: ViralClip
 options:
   bundleIdPrefix: com.viralclip
   deploymentTarget:
-    iOS: "16.0"
+    iOS: "17.0"
   xcodeVersion: "15.0"
   generateEmptyDirectories: true
 
