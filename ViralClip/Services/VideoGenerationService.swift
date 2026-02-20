@@ -47,28 +47,31 @@ class VideoGenerationService: ObservableObject {
             let totalItems = Double(items.count)
             
             for (index, item) in items.enumerated() {
-                let progress = Double(index) / totalItems * 0.8
+                let progressValue = Double(index) / totalItems * 0.8
                 await MainActor.run {
-                    self.progress = progress
+                    self.progress = progressValue
                 }
                 
                 if item.type == .video {
                     if let asset = await photoService.loadAVAsset(for: item) {
-                        try videoTrack.insertTimeRange(
-                            CMTimeRange(start: .zero, duration: asset.duration),
-                            of: asset.tracks(withMediaType: .video).first!,
-                            at: currentTime
-                        )
-                        
-                        if let audioAssetTrack = asset.tracks(withMediaType: .audio).first {
-                            try? audioTrack.insertTimeRange(
-                                CMTimeRange(start: .zero, duration: asset.duration),
-                                of: audioAssetTrack,
+                        let duration = try await asset.load(.duration)
+                        if let assetVideoTrack = try await asset.loadTracks(withMediaType: .video).first {
+                            try videoTrack.insertTimeRange(
+                                CMTimeRange(start: .zero, duration: duration),
+                                of: assetVideoTrack,
                                 at: currentTime
                             )
+                            
+                            if let audioAssetTrack = try await asset.loadTracks(withMediaType: .audio).first {
+                                try? audioTrack.insertTimeRange(
+                                    CMTimeRange(start: .zero, duration: duration),
+                                    of: audioAssetTrack,
+                                    at: currentTime
+                                )
+                            }
+                            
+                            currentTime = CMTimeAdd(currentTime, duration)
                         }
-                        
-                        currentTime = CMTimeAdd(currentTime, asset.duration)
                     }
                 } else {
                     if let image = await photoService.loadFullImage(for: item) {
@@ -76,12 +79,14 @@ class VideoGenerationService: ObservableObject {
                         let imageSize = CGSize(width: 1080, height: 1920)
                         
                         if let imageGenerator = generateImageVideo(from: image, size: imageSize, duration: imageDuration) {
-                            try videoTrack.insertTimeRange(
-                                CMTimeRange(start: .zero, duration: imageDuration),
-                                of: imageGenerator.tracks(withMediaType: .video).first!,
-                                at: currentTime
-                            )
-                            currentTime = CMTimeAdd(currentTime, imageDuration)
+                            if let imageTrack = try await imageGenerator.loadTracks(withMediaType: .video).first {
+                                try videoTrack.insertTimeRange(
+                                    CMTimeRange(start: .zero, duration: imageDuration),
+                                    of: imageTrack,
+                                    at: currentTime
+                                )
+                                currentTime = CMTimeAdd(currentTime, imageDuration)
+                            }
                         }
                     }
                 }
@@ -90,8 +95,6 @@ class VideoGenerationService: ObservableObject {
             await MainActor.run {
                 self.progress = 0.9
             }
-            
-            let averageDuration = currentTime.seconds / Double(max(items.count, 1))
             
             let video = GeneratedVideo(
                 id: videoId,
@@ -152,13 +155,6 @@ class VideoGenerationService: ObservableObject {
         layerInstruction.setTransform(transform, at: .zero)
         instruction.layerInstructions = [layerInstruction]
         videoComposition.instructions = [instruction]
-        
-        let animation = AVMutableVideoComposition(asset: composition) { request in
-            let image = request.sourceImage.clampedToExtent()
-            request.finish(context: nil, contextCallback: nil)
-        }
-        animation.frameDuration = CMTime(value: 1, timescale: 30)
-        animation.renderSize = size
         
         return composition
     }
