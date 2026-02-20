@@ -361,6 +361,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = "";
+				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSCameraUsageDescription = "ViralClip can use your camera to capture new content.";
 				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "ViralClip needs to save generated videos to your library.";
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "ViralClip needs access to your photos and videos to create amazing content for you.";
@@ -443,6 +444,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = "";
+				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSCameraUsageDescription = "ViralClip can use your camera to capture new content.";
 				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "ViralClip needs to save generated videos to your library.";
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "ViralClip needs access to your photos and videos to create amazing content for you.";

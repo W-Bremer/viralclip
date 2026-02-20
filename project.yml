@@ -25,6 +25,7 @@ targets:
           - "**/.DS_Store"
     settings:
       base:
+        GENERATE_INFOPLIST_FILE: YES
         PRODUCT_BUNDLE_IDENTIFIER: com.viralclip.app
         INFOPLIST_KEY_NSPhotoLibraryUsageDescription: "ViralClip needs access to your photos and videos to create amazing content for you."
         INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription: "ViralClip needs to save generated videos to your library."
