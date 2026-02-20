@@ -1,0 +1,483 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		150E865DF19261AFD25524C9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C93DB2A48BAD9BD79C0D3A12 /* Assets.xcassets */; };
+		1B2DFEB6A905B85963CF7FB9 /* AIAnalysisService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2D7DC7FBD799EEC9A1B0346 /* AIAnalysisService.swift */; };
+		3056433273ACE6245D55315D /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 787C341536133AA2FE3A3600 /* Extensions.swift */; };
+		4A5A8A0C518D608083E71EB7 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4313869A33B5AB9A495035B3 /* SettingsViewModel.swift */; };
+		7BF8EB05B2A9A8CE851212CE /* MediaThumbnailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 012E410B432C23845960D2C8 /* MediaThumbnailView.swift */; };
+		8FFB5FA8A81B7BE7ADBAA47B /* VideoCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C1F28BBB49C172B35B60A73 /* VideoCardView.swift */; };
+		A2696C11AFE442214DB22053 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5340B403A52FD15A2722C4FA /* MainTabView.swift */; };
+		A43A4CD6D8372590211CE70B /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC7C3DBA27D142E6C08875E /* HomeViewModel.swift */; };
+		A46636668535027CF1D27A9B /* ViralClipApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA650C9D69E981EC0C52135 /* ViralClipApp.swift */; };
+		B1EA0F325E403B497F8F1CF0 /* VideoEditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430925E652D2465CE460FEC5 /* VideoEditorView.swift */; };
+		B3A535901FCE3AADDAD0B0E5 /* VideoGenerationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD3A4ECA9B2EBE878C2846D /* VideoGenerationService.swift */; };
+		B70AB9FCC7A93003034EAB7D /* CreateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3413C47EABD4E0C4DB3D5D36 /* CreateView.swift */; };
+		C070AA00E3FE6515F6BE83BA /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0DD81E3C2B3D4105BC5FA67 /* HomeView.swift */; };
+		C265D4E752735A78095ACA02 /* MediaPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67643D295E255BA77074060C /* MediaPickerView.swift */; };
+		C2734F2CD8035539E5CD66A3 /* MediaItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF2DF191B4B200761A5DDF5C /* MediaItem.swift */; };
+		E18A31DA1586C629FD260156 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = B248C176D7A28DCF8179ECF1 /* Colors.swift */; };
+		EFDAD6D7BD7D0611404D50E8 /* CreateViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE6157CD4936ABD424468B0 /* CreateViewModel.swift */; };
+		F6ACA3B0B5F4BEE4BB6DD077 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 162A6A444025A8CD1CD7273C /* SettingsView.swift */; };
+		F87584FDCA2BEFDA22BD9C5B /* PhotoLibraryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B8E71DB8D6EBC44611123AC /* PhotoLibraryService.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		012E410B432C23845960D2C8 /* MediaThumbnailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaThumbnailView.swift; sourceTree = "<group>"; };
+		162A6A444025A8CD1CD7273C /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		1C1F28BBB49C172B35B60A73 /* VideoCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoCardView.swift; sourceTree = "<group>"; };
+		3413C47EABD4E0C4DB3D5D36 /* CreateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateView.swift; sourceTree = "<group>"; };
+		390CE0BB23E8BB678DED52FC /* ViralClip.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = ViralClip.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		430925E652D2465CE460FEC5 /* VideoEditorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoEditorView.swift; sourceTree = "<group>"; };
+		4313869A33B5AB9A495035B3 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
+		5340B403A52FD15A2722C4FA /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
+		67643D295E255BA77074060C /* MediaPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaPickerView.swift; sourceTree = "<group>"; };
+		787C341536133AA2FE3A3600 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		8B8E71DB8D6EBC44611123AC /* PhotoLibraryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoLibraryService.swift; sourceTree = "<group>"; };
+		A2D7DC7FBD799EEC9A1B0346 /* AIAnalysisService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AIAnalysisService.swift; sourceTree = "<group>"; };
+		ACE6157CD4936ABD424468B0 /* CreateViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateViewModel.swift; sourceTree = "<group>"; };
+		AFA650C9D69E981EC0C52135 /* ViralClipApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViralClipApp.swift; sourceTree = "<group>"; };
+		B0DD81E3C2B3D4105BC5FA67 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		B248C176D7A28DCF8179ECF1 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		BFD3A4ECA9B2EBE878C2846D /* VideoGenerationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoGenerationService.swift; sourceTree = "<group>"; };
+		C93DB2A48BAD9BD79C0D3A12 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		DF2DF191B4B200761A5DDF5C /* MediaItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaItem.swift; sourceTree = "<group>"; };
+		EDC7C3DBA27D142E6C08875E /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		497A121A979C4A44B8F82A12 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				A2D7DC7FBD799EEC9A1B0346 /* AIAnalysisService.swift */,
+				8B8E71DB8D6EBC44611123AC /* PhotoLibraryService.swift */,
+				BFD3A4ECA9B2EBE878C2846D /* VideoGenerationService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		4B7EF371A35562261899A06D /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				012E410B432C23845960D2C8 /* MediaThumbnailView.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		5AB8DDC7FC16E1F1CCA690DB /* App */ = {
+			isa = PBXGroup;
+			children = (
+				AFA650C9D69E981EC0C52135 /* ViralClipApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		72426E7AD79456FCF8A32B01 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				B248C176D7A28DCF8179ECF1 /* Colors.swift */,
+				787C341536133AA2FE3A3600 /* Extensions.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		753FF890700C2A00814E131B /* ViralClip */ = {
+			isa = PBXGroup;
+			children = (
+				5AB8DDC7FC16E1F1CCA690DB /* App */,
+				7D1CD3378D75FD389D722AFC /* Models */,
+				813D8A1B4BE1E7C525B8B060 /* Resources */,
+				497A121A979C4A44B8F82A12 /* Services */,
+				72426E7AD79456FCF8A32B01 /* Utilities */,
+				A3D7BEBDF7996BB2D1DA01BB /* ViewModels */,
+				B1829E26C7AC2E8E2B6A759E /* Views */,
+			);
+			path = ViralClip;
+			sourceTree = "<group>";
+		};
+		7C11D541B92E78824068F282 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				390CE0BB23E8BB678DED52FC /* ViralClip.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7D1CD3378D75FD389D722AFC /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				DF2DF191B4B200761A5DDF5C /* MediaItem.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		813D8A1B4BE1E7C525B8B060 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				C93DB2A48BAD9BD79C0D3A12 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		A3D7BEBDF7996BB2D1DA01BB /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				ACE6157CD4936ABD424468B0 /* CreateViewModel.swift */,
+				EDC7C3DBA27D142E6C08875E /* HomeViewModel.swift */,
+				4313869A33B5AB9A495035B3 /* SettingsViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		ABE20E119A9C8CC0D2B433FD /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				B0DD81E3C2B3D4105BC5FA67 /* HomeView.swift */,
+				1C1F28BBB49C172B35B60A73 /* VideoCardView.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		B1829E26C7AC2E8E2B6A759E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				5340B403A52FD15A2722C4FA /* MainTabView.swift */,
+				4B7EF371A35562261899A06D /* Components */,
+				FC4062EA49F2785170850B5D /* Create */,
+				E9C04E3142F9D9494A986E83 /* Editor */,
+				ABE20E119A9C8CC0D2B433FD /* Home */,
+				DBBCB419740125477C457DBB /* Settings */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		C6A9D2DF5288C0CFCD332DD0 = {
+			isa = PBXGroup;
+			children = (
+				753FF890700C2A00814E131B /* ViralClip */,
+				7C11D541B92E78824068F282 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		DBBCB419740125477C457DBB /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				162A6A444025A8CD1CD7273C /* SettingsView.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		E9C04E3142F9D9494A986E83 /* Editor */ = {
+			isa = PBXGroup;
+			children = (
+				430925E652D2465CE460FEC5 /* VideoEditorView.swift */,
+			);
+			path = Editor;
+			sourceTree = "<group>";
+		};
+		FC4062EA49F2785170850B5D /* Create */ = {
+			isa = PBXGroup;
+			children = (
+				3413C47EABD4E0C4DB3D5D36 /* CreateView.swift */,
+				67643D295E255BA77074060C /* MediaPickerView.swift */,
+			);
+			path = Create;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		86F62A51B3EFC89AAF6FC543 /* ViralClip */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7F2B1CD24202B39DADD17F52 /* Build configuration list for PBXNativeTarget "ViralClip" */;
+			buildPhases = (
+				A3592EE0B53629BE6B09F873 /* Sources */,
+				608679FA0A435D7F1BF14C13 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ViralClip;
+			packageProductDependencies = (
+			);
+			productName = ViralClip;
+			productReference = 390CE0BB23E8BB678DED52FC /* ViralClip.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E245562CD368F9A95A1EBD2D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1500;
+				TargetAttributes = {
+					86F62A51B3EFC89AAF6FC543 = {
+						DevelopmentTeam = "";
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 65D6AED1A0A88F20403544A3 /* Build configuration list for PBXProject "ViralClip" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = C6A9D2DF5288C0CFCD332DD0;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				86F62A51B3EFC89AAF6FC543 /* ViralClip */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		608679FA0A435D7F1BF14C13 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				150E865DF19261AFD25524C9 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A3592EE0B53629BE6B09F873 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1B2DFEB6A905B85963CF7FB9 /* AIAnalysisService.swift in Sources */,
+				E18A31DA1586C629FD260156 /* Colors.swift in Sources */,
+				B70AB9FCC7A93003034EAB7D /* CreateView.swift in Sources */,
+				EFDAD6D7BD7D0611404D50E8 /* CreateViewModel.swift in Sources */,
+				3056433273ACE6245D55315D /* Extensions.swift in Sources */,
+				C070AA00E3FE6515F6BE83BA /* HomeView.swift in Sources */,
+				A43A4CD6D8372590211CE70B /* HomeViewModel.swift in Sources */,
+				A2696C11AFE442214DB22053 /* MainTabView.swift in Sources */,
+				C2734F2CD8035539E5CD66A3 /* MediaItem.swift in Sources */,
+				C265D4E752735A78095ACA02 /* MediaPickerView.swift in Sources */,
+				7BF8EB05B2A9A8CE851212CE /* MediaThumbnailView.swift in Sources */,
+				F87584FDCA2BEFDA22BD9C5B /* PhotoLibraryService.swift in Sources */,
+				F6ACA3B0B5F4BEE4BB6DD077 /* SettingsView.swift in Sources */,
+				4A5A8A0C518D608083E71EB7 /* SettingsViewModel.swift in Sources */,
+				8FFB5FA8A81B7BE7ADBAA47B /* VideoCardView.swift in Sources */,
+				B1EA0F325E403B497F8F1CF0 /* VideoEditorView.swift in Sources */,
+				B3A535901FCE3AADDAD0B0E5 /* VideoGenerationService.swift in Sources */,
+				A46636668535027CF1D27A9B /* ViralClipApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		03483D54CC10BE3377702DE2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MARKETING_VERSION = 1.0.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.9;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		441315FA676A27BAB4714C1C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_KEY_NSCameraUsageDescription = "ViralClip can use your camera to capture new content.";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "ViralClip needs to save generated videos to your library.";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "ViralClip needs access to your photos and videos to create amazing content for you.";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.viralclip.app;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		87215C105D298090E10EDE2B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MARKETING_VERSION = 1.0.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.9;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		D6D3B501ED170C9F0DEB329E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_KEY_NSCameraUsageDescription = "ViralClip can use your camera to capture new content.";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "ViralClip needs to save generated videos to your library.";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "ViralClip needs access to your photos and videos to create amazing content for you.";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.viralclip.app;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		65D6AED1A0A88F20403544A3 /* Build configuration list for PBXProject "ViralClip" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				03483D54CC10BE3377702DE2 /* Debug */,
+				87215C105D298090E10EDE2B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		7F2B1CD24202B39DADD17F52 /* Build configuration list for PBXNativeTarget "ViralClip" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				441315FA676A27BAB4714C1C /* Debug */,
+				D6D3B501ED170C9F0DEB329E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = E245562CD368F9A95A1EBD2D /* Project object */;
+}
