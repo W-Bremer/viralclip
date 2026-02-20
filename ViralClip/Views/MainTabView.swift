@@ -112,7 +112,7 @@ struct PageIndicator: View {
                 Circle()
                     .fill(index == currentPage ? Color.appPrimary : Color.appTextSecondary.opacity(0.3))
                     .frame(width: 8, height: 8)
-                    .animation(.smooth, value: currentPage)
+                    .animation(.smooth, value: value: currentPage)
             }
         }
     }
