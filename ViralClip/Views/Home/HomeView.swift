@@ -27,8 +27,10 @@ struct HomeView: View {
                                         Label("Delete", systemImage: "trash")
                                     }
                                     
-                                    ShareLink(item: video.videoURL ?? URL(fileURLWithPath: "")) {
-                                        Label("Share", systemImage: "square.and.arrow.up")
+                                    if let url = video.videoURL {
+                                        ShareLink(item: url) {
+                                            Label("Share", systemImage: "square.and.arrow.up")
+                                        }
                                     }
                                 }
                         }
