@@ -21,7 +21,7 @@ struct MediaThumbnailView: View {
             }
             
             if isSelected {
-                RoundedRectangle(radius: 8)
+                RoundedRectangle(cornerRadius: 8)
                     .stroke(Color.appPrimary, lineWidth: 3)
                 
                 Image(systemName: "checkmark.circle.fill")
@@ -88,7 +88,7 @@ struct AIFeatureTagView: View {
         .background(tagColor.opacity(0.15))
         .cornerRadius(12)
         .overlay(
-            RoundedRectangle(radius: 12)
+            RoundedRectangle(cornerRadius: 12)
                 .stroke(tagColor.opacity(0.3), lineWidth: 1)
         )
     }
