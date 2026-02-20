@@ -1,4 +1,5 @@
 import SwiftUI
+import UIKit
 
 @main
 struct ViralClipApp: App {
@@ -6,7 +7,7 @@ struct ViralClipApp: App {
     
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            RootView()
                 .environmentObject(appState)
         }
     }
@@ -24,7 +25,7 @@ class AppState: ObservableObject {
     }
 }
 
-struct ContentView: View {
+struct RootView: View {
     @EnvironmentObject var appState: AppState
     
     var body: some View {
