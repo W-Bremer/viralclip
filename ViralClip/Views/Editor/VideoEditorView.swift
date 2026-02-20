@@ -119,7 +119,7 @@ struct VideoPreviewThumbnail: View {
     
     var body: some View {
         ZStack {
-            RoundedRectangle(cornerRadius: 12)
+            RoundedRectangle(radius: 12)
                 .fill(
                     LinearGradient(
                         colors: [Color.appPrimary.opacity(0.4), Color.appSecondary.opacity(0.4)],

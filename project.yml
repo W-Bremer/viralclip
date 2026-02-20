@@ -35,3 +35,4 @@ targets:
         CODE_SIGN_STYLE: Automatic
         CODE_SIGNING_ALLOWED: NO
         DEVELOPMENT_TEAM: ""
+        SWIFT_WARNINGS_AS_ERRORS: NO

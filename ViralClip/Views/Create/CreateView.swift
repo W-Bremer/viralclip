@@ -321,7 +321,7 @@ struct StyleSelectorButton: View {
                 .background(isSelected ? Color.appPrimary : Color.appSurface)
                 .cornerRadius(20)
                 .overlay(
-                    RoundedRectangle(cornerRadius: 20)
+                    RoundedRectangle(radius: 20)
                         .stroke(isSelected ? Color.appPrimary : Color.appTextSecondary.opacity(0.3), lineWidth: 1)
                 )
         }

@@ -6,7 +6,7 @@ struct VideoCardView: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 12) {
             ZStack {
-                RoundedRectangle(cornerRadius: 12)
+                RoundedRectangle(radius: 12)
                     .fill(
                         LinearGradient(
                             colors: [Color.appPrimary.opacity(0.3), Color.appSecondary.opacity(0.3)],
